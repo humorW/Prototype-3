@@ -527,18 +527,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3340199030441485530, guid: 1352da6a8175c4bbd9b73adf15e66eda, type: 3}
-      propertyPath: m_Size.y
-      value: 2.078513
-      objectReference: {fileID: 0}
-    - target: {fileID: 3340199030441485530, guid: 1352da6a8175c4bbd9b73adf15e66eda, type: 3}
-      propertyPath: m_Size.z
-      value: 3.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 3340199030441485530, guid: 1352da6a8175c4bbd9b73adf15e66eda, type: 3}
-      propertyPath: m_Center.y
-      value: 1.044257
-      objectReference: {fileID: 0}
     - target: {fileID: 3764504958751344129, guid: 1352da6a8175c4bbd9b73adf15e66eda, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -585,10 +573,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3764504958751666721, guid: 1352da6a8175c4bbd9b73adf15e66eda, type: 3}
       propertyPath: m_Name
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3764504958751666721, guid: 1352da6a8175c4bbd9b73adf15e66eda, type: 3}
-      propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -752,15 +736,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3764504958751666721, guid: 1352da6a8175c4bbd9b73adf15e66eda, type: 3}
   m_PrefabInstance: {fileID: 1810138660}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2096099098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096099097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 290f44183a0514aaa9065ef16b62937c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
