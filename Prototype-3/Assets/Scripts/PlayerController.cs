@@ -5,14 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
+    private Animator playerAnim;
+    public ParticleSystem explosionPartcle;
+    public ParticleSystem dirtParticle;
     public float jumpForce = 10;
     public float gravityModifier;
     public bool isOnGround = true;
-    public bool gameOver = false;
+    public bool gameOver;
+    
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
 
         
@@ -21,10 +26,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+            playerAnim.SetTrigger("Jump_trig");
+            dirtParticle.Stop();
         }
     }
 
@@ -34,10 +41,15 @@ public class PlayerController : MonoBehaviour
         if(Collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+            dirtParticle.Play();
         } else if(Collision.gameObject.CompareTag("Obstacle")) 
         {
             Debug.Log("Game Over");
             gameOver = true;
+            playerAnim.SetBool("Death_b", true);
+            playerAnim.SetInteger("DeathType_int", 1);
+            explosionPartcle.Play();
+            dirtParticle.Stop();
         }
     }
 }
